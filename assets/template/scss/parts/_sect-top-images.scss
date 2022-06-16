@@ -1,0 +1,663 @@
+.sect-top {
+    $sect: &;
+
+    &_page {
+        /* --------------------------------------------- */
+        /* Главная
+        /* --------------------------------------------- */
+        &_main {
+            // Миксин для рассчета размера (width и height) картинок
+            @mixin main-img-values($width, $height) {
+                @include media($bp-header-remove-pb) {
+                    width: #{($width / 100 * 80.92)}px;
+                    height: #{($height / 100 * 80.92)}px;
+                }
+                @include media($bp-lg) {
+                    width: #{($width / 100 * 67.07)}px;
+                    height: #{($height / 100 * 67.07)}px;
+                }
+                @include media($bp-md) {
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-screen,
+            #{$sect}__img-icon-c-sharp,
+            #{$sect}__img-icon-ts,
+            #{$sect}__img-icon-css,
+            #{$sect}__img-icon-js,
+            #{$sect}__img-icon-html,
+            #{$sect}__img-icon-sql,
+            #{$sect}__img-circles {
+                /* Составные элементы картинки */
+                position: absolute;
+                background: no-repeat center center;
+                background-size: contain;
+            }
+
+            #{$sect}__img-screen {
+                $width: 413;
+                $height: 546;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/screen.png);
+                background-position: right center;
+                right: -3px;
+                top: 86px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 199px;
+                    right: 98px;
+                }
+                @include media($bp-xl) {
+                    right: 51px;
+                }
+                @include media($bp-lg) {
+                    right: 10px;
+                    top: 238px;
+                }
+            }
+
+            #{$sect}__img-icon-c-sharp {
+                $width: 66;
+                $height: 68;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-c-sharp.png);
+                top: 115px;
+                right: 394px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 217px;
+                    right: 420px;
+                }
+                @include media($bp-xl) {
+                    top: 255px;
+                    right: 372px;
+                }
+                @include media($bp-lg) {
+                    top: 289px;
+                    right: 276px;
+                }
+            }
+
+            #{$sect}__img-icon-ts {
+                $width: 69;
+                $height: 83;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-ts.png);
+                top: 211px;
+                right: 388px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 313px;
+                    right: 416px;
+                }
+                @include media($bp-xl) {
+                    top: 322px;
+                    right: 369px;
+                }
+                @include media($bp-lg) {
+                    top: 344px;
+                    right: 272px;
+                }
+            }
+
+            #{$sect}__img-icon-css {
+                $width: 53;
+                $height: 72;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-css.png);
+                top: 328px;
+                right: 388px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 393px;
+                    right: 415px;
+                }
+                @include media($bp-xl) {
+                    top: 403px;
+                    right: 368px;
+                }
+                @include media($bp-lg) {
+                    top: 407px;
+                    right: 272px;
+                }
+            }
+
+            #{$sect}__img-icon-js {
+                $width: 69;
+                $height: 102;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-js.png);
+                right: -18px;
+                top: 342px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 415px;
+                    right: 86px;
+                }
+                @include media($bp-xl) {
+                    top: 408px;
+                    right: 38px;
+                }
+                @include media($bp-lg) {
+                    top: 416px;
+                    right: 0;
+                }
+            }
+
+            #{$sect}__img-icon-html {
+                $width: 66;
+                $height: 108;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-html.png);
+                top: 451px;
+                right: -42px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 504px;
+                    right: 66px;
+                }
+                @include media($bp-xl) {
+                    top: 499px;
+                    right: 19px;
+                }
+                @include media($bp-lg) {
+                    top: 488px;
+                    right: -16px;
+                }
+            }
+
+            #{$sect}__img-icon-sql {
+                $width: 100;
+                $height: 147;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/icon-sql.png);
+                right: -51px;
+                top: 556px;
+
+                @include media($bp-header-remove-pb) {
+                    right: 58px;
+                    top: 590px;
+                }
+                @include media($bp-xl) {
+                    right: 11px;
+                    top: 587px;
+                }
+                @include media($bp-lg) {
+                    right: -23px;
+                    top: 558px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                $width: 650;
+                $height: 468;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/main/circles.png);
+                top: 36px;
+                right: -123px;
+
+                @include media($bp-header-remove-pb) {
+                    top: 152px;
+                    right: -5px;
+                }
+                @include media($bp-xl) {
+                    right: -38px;
+                    top: 146px;
+                }
+                @include media($bp-lg) {
+                    right: -70px;
+                    top: 197px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* contacts
+        /* --------------------------------------------- */
+        &_contacts {
+            // Миксин для рассчета размера (width и height) картинок
+            @mixin main-img-values($width, $height) {
+                @include media($bp-lg) {
+                    width: #{($width / 100 * 81.34)}px;
+                    height: #{($height / 100 * 86.48)}px;
+                }
+                @include media($bp-md) {
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-contacts,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-contacts {
+                $width: 461;
+                $height: 296;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/contacts/contacts.png);
+                right: 12px;
+                top: -13px;
+
+                @include media($bp-lg) {
+                    right: -114px;
+                    top: 34px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                $width: 461;
+                $height: 240;
+                width: #{$width}px;
+                height: #{$height}px;
+                @include main-img-values($width, $height);
+
+                background-image: url(../images/contacts/circles.png);
+                right: 12px;
+                top: -12px;
+
+                @include media($bp-lg) {
+                    right: -114px;
+                    top: 33px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* portfolio
+        /* --------------------------------------------- */
+        &_portfolio {
+            #{$sect}__img-portfolio,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-portfolio {
+                width: 326px;
+                height: 287px;
+
+                background-image: url(../images/portfolio/portfolio.png);
+                right: 43px;
+                top: -2px;
+
+                @include media($bp-lg) {
+                    right: -30px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 404px;
+                height: 221px;
+
+                background-image: url(../images/portfolio/circles.png);
+                right: 14px;
+                top: 24px;
+
+                @include media($bp-lg) {
+                    right: -59px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* technologies
+        /* --------------------------------------------- */
+        &_technologies {
+            #{$sect}__img-technologies,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-technologies {
+                width: 323px;
+                height: 285px;
+                right: 59px;
+                top: 3px;
+                background-image: url(../images/technologies/technologies.png);
+
+                @include media($bp-lg) {
+                    right: -4px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 411px;
+                height: 131px;
+                right: 15px;
+                top: 11px;
+                background-image: url(../images/technologies/circles.png);
+
+                @include media($bp-lg) {
+                    right: -48px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* devops
+        /* --------------------------------------------- */
+        &_devops {
+            #{$sect}__img-devops,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-devops {
+                width: 290px;
+                height: 287px;
+                right: 75px;
+                top: 1px;
+                background-image: url(../images/devops/devops.png);
+
+                @include media($bp-lg) {
+                    right: -11px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 406px;
+                height: 195px;
+                right: 14px;
+                top: 26px;
+                background-image: url(../images/devops/circles.png);
+
+                @include media($bp-lg) {
+                    right: -72px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* custom-soft
+        /* --------------------------------------------- */
+        &_custom-soft {
+            #{$sect}__img-custom-soft,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-custom-soft {
+                width: 312px;
+                height: 202px;
+                background-image: url(../images/custom-soft/custom-soft.png);
+                right: 66px;
+                top: 27px;
+
+                @include media($bp-lg) {
+                    right: -50px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 432px;
+                height: 184px;
+                right: 15px;
+                top: 26px;
+                background-image: url(../images/custom-soft/circles.png);
+
+                @include media($bp-lg) {
+                    right: -140px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* web
+        /* --------------------------------------------- */
+        &_web {
+            #{$sect}__img-web,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-web {
+                right: 104px;
+                top: 23px;
+                width: 299px;
+                height: 244px;
+                background-image: url(../images/web/web.png);
+
+                @include media($bp-lg) {
+                    right: -20px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 458px;
+                height: 172px;
+                right: 14px;
+                top: 57px;
+                background-image: url(../images/web/circles.png);
+
+                @include media($bp-lg) {
+                    right: -110px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* qa
+        /* --------------------------------------------- */
+        &_qa {
+            #{$sect}__img-qa,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-qa {
+                right: 16px;
+                top: 15px;
+                width: 356px;
+                height: 300px;
+                background-image: url(../images/qa/qa.png);
+
+                @include media($bp-lg) {
+                    right: -44px;
+                    width: 270px;
+                    top: 55px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 401px;
+                height: 274px;
+                right: 18px;
+                top: 4px;
+                background-image: url(../images/qa/circles.png);
+
+                @include media($bp-lg) {
+                    right: -42px;
+                    top: 44px;
+                    width: 304px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* mobile
+        /* --------------------------------------------- */
+        &_mobile {
+            #{$sect}__img-mobile,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-mobile {
+                width: 342px;
+                height: 262px;
+                background-image: url(../images/mobile/mobile.png);
+                right: 54px;
+                top: 22px;
+
+                @include media($bp-lg) {
+                    right: -34px;
+                    width: 270px;
+                    top: 55px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 428px;
+                height: 174px;
+                right: 12px;
+                top: 56px;
+                background-image: url(../images/mobile/circles.png);
+
+                @include media($bp-lg) {
+                    right: -76px;
+                    top: 89px;
+                    width: 338px;
+                    height: 179px;
+                }
+            }
+        }
+
+
+        /* --------------------------------------------- */
+        /* team
+        /* --------------------------------------------- */
+        &_team {
+            #{$sect}__img-team,
+            #{$sect}__img-circles {
+                position: absolute;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center center;
+
+                @include media($bp-md) {
+                    content: none;
+                    display: none;
+                }
+            }
+
+            #{$sect}__img-team {
+                width: 268px;
+                height: 327px;
+                background-image: url(../images/team/team.png);
+                right: 74px;
+                top: 0px;
+
+                @include media($bp-lg) {
+                    right: -16px;
+                    width: 270px;
+                    top: 55px;
+                }
+            }
+
+            #{$sect}__img-circles {
+                width: 413px;
+                height: 234px;
+                background-image: url(../images/team/circles.png);
+                right: 17px;
+                top: 44px;
+
+                @include media($bp-lg) {
+                    right: -69px;
+                    top: 89px;
+                    width: 416px;
+                    height: 179px;
+                }
+            }
+        }
+    }
+}

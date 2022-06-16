@@ -1,0 +1,194 @@
+//
+// Данный файл содержит стили и sass наработки, которые не или почти не меняются от макета к макету
+//
+
+// ===========================================
+// Функции для адаптива
+// ===========================================
+// breakpoints
+$bp-xl: 1200;
+$bp-lg: 992;
+$bp-md: 768;
+$bp-sm: 480;
+
+@function get-max-value($number) {
+    @return $number;
+}
+
+@function get-min-value($number) {
+    $number: $number + 1;
+    @return $number;
+}
+
+@mixin media-min-max($min: false, $max: false) {
+    @if $min != false {
+        @if $max != false {
+            @media only screen and (min-width: get-min-value($min) + 'px') and (max-width: get-max-value($max) + 'px') {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: get-min-value($min) + 'px') {
+                @content;
+            }
+        }
+    } @else if $max != false {
+        @media only screen and (max-width: get-max-value($max) + 'px') {
+            @content;
+        }
+    }
+}
+
+@mixin media($value) {
+    @include media-min-max($max: $value) {
+        @content;
+    }
+}
+
+// ===========================================
+// Остальные функции
+// ===========================================
+@mixin solid-width($value) {
+    min-width: $value;
+    max-width: $value;
+}
+
+@mixin solid-width-reset() {
+    min-width: 0;
+    max-width: none;
+}
+
+@mixin solid-height($value) {
+    min-height: $value;
+    max-height: $value;
+}
+
+@mixin solid-height-reset() {
+    min-height: 0;
+    max-height: none;
+}
+
+// ===========================================
+// Reset
+// ===========================================
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+*:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+q:before, q:after {
+    content: none;
+}
+
+// ===========================================
+// Базовые стили
+// ===========================================
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+body, html, .wrapper {
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+b, strong, .bold {
+    font-weight: bold;
+}
+
+.adaptive-img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.hidden {
+    display: none;
+}
+
+.black {
+    /* с данным классом ссылки при наведении меняют цвет (в отличие от параметра style) */
+    color: #000;
+}
+
+.black-on-hover {
+    &:hover {
+        color: #000;
+    }
+}
+
+.mirror-y {
+    transform: scaleY(-1);
+}
+
+.mirror-x {
+    transform: scaleX(-1);
+}
+
+.clearfix {
+    &::before, &::after {
+        content: "";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+/* Если навести на ссылку, внутри которой svg (вставленный через object), то курсор у мыши будет default, а не pointer. Данный код исправляет это. */
+.svg-cursor {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+}

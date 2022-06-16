@@ -1,0 +1,8 @@
+//
+// Данный файл собирает все остальные файлы. И компилируется в конечный CSS файл. На этот файл вешается watcher.
+//
+
+@import "base.scss";
+@import "fonts.scss";
+@import "style";
+@import "parts/sect-top-images";
